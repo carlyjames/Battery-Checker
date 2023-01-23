@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(/img.jpg) center / cover;
+}
+
+.holder {
+    height: 50%;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.battery {
+    position: relative;
+    height: 180px;
+    width: 410px; 
+    border-radius: 25px;
+    background: transparent;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 10px #ffffff62;
+    overflow: hidden;
+    margin: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.edge {
+    height: 40px;
+    width: 10px;
+    background: white;
+    border-radius: 0 10px 10px 0;
+}
+
+.level {
+    height: 100%;
+    width: 0%;
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.level.healthy {
+    background: #00ff0060;
+}
+
+.level.charging {
+    animation: charge 2s linear infinite;
+}
+
+@keyframes charge {
+    0% {width: 0%;}
+    10% {width: 10%;}
+    20% {width: 20%;}
+    30% {width: 30%;}
+    40% {width: 40%;}
+    50% {width: 50%;}
+    60% {width: 60%;}
+    70% {width: 70%;}
+    80% {width: 80%;}
+    90% {width: 90%;}
+    100% {width: 100%;}
+}
+
+.hold {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-size: 50px;
+    z-index: 20;
+    font-family: cursive;
+}
+
+.hold.active {
+    height: 300px;
+    width: 300px;
+}
+
+.fa-bolt {
+    /* visibility: hidden; */
+    color: white;
+    z-index: 30;
+    animation: charg 5s linear infinite;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@keyframes charg {
+    0%  {opacity: 0;}
+    50%  {opacity: 1;}
+    100%  {opacity: 0;}
+}
+
+.charge-status {
+    height: 100px;
+    width: 50px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    display: none;
+    transition: .5s;
+}
+
+.charge-status.active {
+    display: flex;
+}
